@@ -1,0 +1,106 @@
+@font-face {
+    font-family: 'GL';
+    font-weight: 300;
+    font-style: normal;
+    /* eot?#iefix -> ex 낮은버전에도 나오게 설정*/
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.ttf') format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GM';
+    font-weight: 500;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf') format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GB';
+    font-weight: 700;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf') format("truetype");
+    font-display: swap;
+}
+
+/* --는 사용 안해도됨, 하지만 변수인것을 보여줄려고 사용 */
+/* 폰트에 관련된 것들 많이 사용 + 위에 존재해야함 */
+:root {
+    --colorGreen: #cedfc3;
+    --colorDGreen: #647367;
+    --colorBg: #f8f8e7;
+    --colorGBg: #d6e3ca;
+    --colorBtn: #ce5561;
+    --bodyc: #474747;
+}
+
+body {
+    font-family: 'GM';
+    /* 컬러 변수로 사용 */
+    color: var(--bodyc);
+}
+
+/* @media (max-width:1024px) {
+    body {
+        background-color: red;
+    }
+} */
+
+
+/* 
+display flex
+부모에게 적용하면 자식이 움직임.
+flex-dorection에 적용된 기준으로 아래 이동
+justify
+align
+*/
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#box {
+    background-color: black;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    transition: transform 0.5s;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+#box:hover {
+    transform: scale(2);
+    background-color: yellow;
+}
+
+
+#box::before {
+    content: "나는원이다";
+    color: #f8f8e7;
+    display: block;
+    text-align: center;
+    line-height: 10rem;
+}
+
+#box:hover::before {
+    content: "아니다";
+    color: black
+}
